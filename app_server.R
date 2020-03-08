@@ -4,6 +4,8 @@ library(dplyr)
 
 
 server <- function(input, output) {
+  
+  # Scatter plot
   output$scatter <- renderPlotly({
     title <- paste0("Midwest Dataset Scatterplot")
     p <- ggplot(midwest) +
@@ -15,8 +17,11 @@ server <- function(input, output) {
     p
   })
 
+  # Bar Plot
   output$bar <- renderPlotly({
+    # Input from slider about min population total
     population <- input$population
+    # Data frame for bar chart
     bar_data <- midwest %>%
       filter(poptotal >= population) %>%
       group_by(state) %>%

@@ -3,6 +3,7 @@ library(ggplot2)
 library(plotly)
 
 selected_values1 <- colnames(midwest)
+# Column names for bar chart data
 selected_values2 <- c(
   "avg_percwhite",
   "avg_percblack",
@@ -27,7 +28,7 @@ y_input <- selectInput(
   selected = "percwhite"
 )
 
-
+# Bar chart y-axis value
 y_input2 <- selectInput(
   "yaxis2",
   label = "Y-Axis Value",
@@ -55,6 +56,7 @@ population_input <- sliderInput(
   step = 100000,
 )
 
+# Scatter plot tab
 tab1 <- tabPanel(
   "Scatter plot",
   h1("A6 Homework"),
@@ -70,6 +72,7 @@ tab1 <- tabPanel(
   )
 )
 
+# Bar plot tab
 tab2 <- tabPanel(
   "Bar Graph",
   h1("A6 Homework"),
